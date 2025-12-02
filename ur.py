@@ -1,4 +1,5 @@
 import pygame
+import pygame.freetype
 import datetime
 
 WIDTH = 800
@@ -25,12 +26,26 @@ class digitalt_ur:
         text = font.render(number, True, color)
         textRect = text.get_rect(center=position)
         screen.blit(text,textRect)
-'''class alarm:
-
+'''
+class alarm:
+'''
 class stopur:
+    def stop_ur(screen):
+        font = pygame.freetype.SysFont(None, 100)
+        font.origin = True
 
-class timer:'''
+        ticks = pygame.time.get_ticks()
+        millis = ticks % 1000
+        seconds = int(ticks / 1000 % 60)
+        minutes = int(ticks / 60000 % 24)
+        out = '{minutes:02d}:{seconds:02d}:{millis}'.format(minutes=minutes, millis=millis, seconds=seconds)
+        font.render_to(screen, (100, 100), out, pygame.Color(GREEN))
+        pygame.display.flip()
+if __name__ == '__stopur__': stopur()
 
+'''
+class timer:
+'''
 
 def main():
     run = True
@@ -45,6 +60,7 @@ def main():
         screen.fill(BLACK)
 
         digitalt_ur.ur(current_time_str,200,WHITE,(WIDTH/2,HEIGHT/2))
+        stopur.stop_ur(screen)
 
         pygame.display.flip()
 
