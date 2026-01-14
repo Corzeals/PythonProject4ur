@@ -102,10 +102,13 @@ def main():
         current_time_str = now.strftime("%H:%M:%S")
 
         screen.fill(BLACK)
+
         if endticks > pygame.time.get_ticks():
             timer(screen, endticks)
-            pygame.draw.rect(screen, (200, 1, 5), pygame.Rect(0, 20, 250, 100))
+            pygame.draw.rect(screen, (0, 0, 0), pygame.Rect(0, 20, 250, 100))
             værdi = 0
+        else:
+            font.render_to(screen,(0, 700), 'tast sekunder:', pygame.Color(GREEN))
         if vis_stopur:
             font.render_to(screen, (0,100), 'stop:', pygame.Color(GREEN))
         else:
