@@ -108,7 +108,7 @@ def main():
             pygame.draw.rect(screen, (0, 0, 0), pygame.Rect(0, 20, 250, 100))
             værdi = 0
         else:
-            font.render_to(screen,(0, 710), 'tast sekunder:', pygame.Color(GREEN))
+            font.render_to(screen,(0, 710), 'tast sekunder!:', pygame.Color(GREEN))
         if vis_stopur:
             font.render_to(screen, (0,100), 'stop:', pygame.Color(GREEN))
         else:
